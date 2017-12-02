@@ -292,12 +292,18 @@ class CodeCoverageTest extends TestCase
             $coverage->getData()
         );
 
+        if (version_compare(\PHPUnit_Runner_Version::id(), '4.7', '>=')) {
+            $size = 'unknown';
+        } else {
+            $size = 'small';
+        }
+
         $this->assertEquals(
             [
-                'BankAccountTest::testBalanceIsInitiallyZero'       => ['size' => 'unknown', 'status' => null],
-                'BankAccountTest::testBalanceCannotBecomeNegative'  => ['size' => 'unknown', 'status' => null],
-                'BankAccountTest::testBalanceCannotBecomeNegative2' => ['size' => 'unknown', 'status' => null],
-                'BankAccountTest::testDepositWithdrawMoney'         => ['size' => 'unknown', 'status' => null]
+                'BankAccountTest::testBalanceIsInitiallyZero'       => ['size' => $size, 'status' => null],
+                'BankAccountTest::testBalanceCannotBecomeNegative'  => ['size' => $size, 'status' => null],
+                'BankAccountTest::testBalanceCannotBecomeNegative2' => ['size' => $size, 'status' => null],
+                'BankAccountTest::testDepositWithdrawMoney'         => ['size' => $size, 'status' => null]
             ],
             $coverage->getTests()
         );
@@ -424,6 +430,8 @@ class CodeCoverageTest extends TestCase
                 9,
                 10,
                 11,
+                12,
+                13,
                 14,
                 15,
                 16,
