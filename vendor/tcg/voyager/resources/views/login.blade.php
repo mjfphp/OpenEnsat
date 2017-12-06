@@ -47,8 +47,8 @@
                         <img class="img-responsive pull-left logo hidden-xs animated fadeIn" src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                         <div class="copy animated fadeIn">
-                            <h1>{{ Voyager::setting('admin.title', 'Voyager') }}</h1>
-                            <p>{{ Voyager::setting('admin.description', __('voyager.login.welcome')) }}</p>
+                            <h1>OpenEnsat</h1>
+                            <p>Platform Administration</p>
                         </div>
                     </div> <!-- .logo-title-container -->
                 </div>
@@ -56,9 +56,9 @@
         </div>
 
         <div class="col-xs-12 col-sm-5 col-md-4 login-sidebar">
-            
+
             <div class="login-container">
-                
+
                 <p>{{ __('voyager.login.signin_below') }}</p>
 
                 <form action="{{ route('voyager.login') }}" method="POST">
@@ -116,7 +116,7 @@
     });
     email.focus();
     document.getElementById('emailGroup').classList.add("focused");
-    
+
     // Focus events for email and password fields
     email.addEventListener('focusin', function(e){
         document.getElementById('emailGroup').classList.add("focused");
