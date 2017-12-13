@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
     @section('header')
         <div class="bg-img" style="background-image: url('img/background1.jpg');">
