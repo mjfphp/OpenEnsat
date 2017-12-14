@@ -594,7 +594,7 @@ header {
 }
 
 .home-content h1 {
-  text-transform: uppercase;
+  text-transform: none;
 }
 .home-content button {
   margin-top: 20px;
@@ -1750,4 +1750,24 @@ header {
     -webkit-transform:scale(0);
             transform:scale(0);
   }
+}
+.logo-middle{
+    position: center;
+    width: 20%;
+}
+.nom-bar-haut{
+    color: #696969;
+    top: 25%;
+    font-weight: bolder;
+}
+.a-login{
+    color: #10161a;
+    font-weight: bold;
+}
+.a-register{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.img-circle {
+    border-radius: 50%;
 }
