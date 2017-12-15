@@ -11,7 +11,7 @@
                     <!-- Logo -->
                     <div class="navbar-brand">
                         <a href="index.html">
-                            <span class="col-md-4"><img class="logo" src="img/logo.png" alt="logo"></span>
+                            <span class="col-md-4"><img class="logo" src="{{asset('img/logo.png')}}" alt="logo"></span>
                             <span class="nom-bar-haut col-md-4">OpenEnsat</span>
                         </a>
                     </div>
