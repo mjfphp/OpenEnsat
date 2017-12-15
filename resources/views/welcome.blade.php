@@ -55,7 +55,7 @@
                         <!-- home content -->
                         <div class="col-md-10 col-md-offset-1">
                             <div class="home-content">
-                                <img class="logo logo-middle" src="img/logo.png" alt="logo">
+                                <img class="logo logo-middle" src="img/logo-alt.png" alt="logo">
                                 <h1 class="white-text title">OpenEnsat</h1>
                                 <p class="white-text">Nous vous présentons tous les cours dont vous aurez besoin pour devenir compétent dans tous domaine.</br>Notre site vous permettra de maitriser les sujets proposés que vous avez suivis.</p>
                                 @if (Route::has('login'))

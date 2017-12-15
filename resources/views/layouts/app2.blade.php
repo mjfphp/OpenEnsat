@@ -59,7 +59,7 @@
 
                 <!-- footer logo -->
                 <div class="footer-logo">
-                    <a href="index.html"><h5 class="white-text">OpenEnsat</h5><img src="img/logo-alt.png" alt="logo"></a>
+                    <a href="index.html"><img src="img/logo-alt.png" alt="logo"><h5 class="white-text">OpenEnsat</h5></a>
                 </div>
                 <!-- /footer logo -->
 
