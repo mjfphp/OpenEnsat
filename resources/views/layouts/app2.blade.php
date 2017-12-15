@@ -14,20 +14,20 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
 
     <!-- Owl Carousel -->
-    <link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/owl.carousel.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/owl.theme.default.css')}}" />
 
     <!-- Magnific Popup -->
-    <link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +59,7 @@
 
                 <!-- footer logo -->
                 <div class="footer-logo">
-                    <a href="index.html"><h5 class="white-text">OpenEnsat</h5><img src="img/logo-alt.png" alt="logo"></a>
+                    <a href="index.html"><h5 class="white-text">OpenEnsat</h5><img src="{{asset('img/logo-alt.png')}}" alt="logo"></a>
                 </div>
                 <!-- /footer logo -->
 
@@ -91,13 +91,12 @@
 </footer>
 <!-- /Footer -->
 <!-- jQuery Plugins -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 </body>
 
 </html>
-
