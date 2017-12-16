@@ -56,7 +56,9 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="home-content">
                                 <img class="logo logo-middle" src="img/logo-alt.png" alt="logo">
-                                <h1 class="white-text title">OpenEnsat</h1>
+                                <div class="section-header text-center">
+                                    <h1 class="white-text title">OpenEnsat</h1>
+                                </div>
                                 <p class="white-text">Nous vous présentons tous les cours dont vous aurez besoin pour devenir compétent dans tous domaine.</br>Notre site vous permettra de maitriser les sujets proposés que vous avez suivis.</p>
                                 @if (Route::has('login'))
                                     <div class="top-right links">
@@ -155,7 +157,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team1.jpg" alt="">
+                            <img class="img-responsive" src="./img/team1.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/bouchaala.zineb"><i class="fa fa-facebook"></i></a>
@@ -175,7 +177,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team2.jpg" alt="">
+                            <img class="img-responsive" src="./img/team2.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/profile.php?id=100012412780050"><i class="fa fa-facebook"></i></a>
@@ -195,7 +197,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team3.jpg" alt="">
+                            <img class="img-responsive" src="./img/team3.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/driss.najih.37"><i class="fa fa-facebook"></i></a>
@@ -215,7 +217,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive " src="./img/team4.jpg" alt="">
+                            <img class="img-responsive" src="./img/team4.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/hamza.derraz.5"><i class="fa fa-facebook"></i></a>

@@ -60,7 +60,13 @@
                                 <button type="submit" class="main-btn">
                                     Se connecter
                                 </button>
-
+                                </br>
+                                <button class="main-btn">
+                                    <a class="btn btn-link text-white" href="{{ URL::route('auth/facebook') }}">
+                                        Facebook
+                                    </a>
+                                </button>
+                                </br>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Mot de passe oublié ?
                                 </a>
