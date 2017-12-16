@@ -65,10 +65,8 @@
                       <span class="nom-bar-haut col-md-2 col-sm-2">OpenEnsat</span>
                     </a>
 
-<<<<<<< HEAD
-                    <a href="index.html"><img src="{{asset('img/logo-alt.png')}}" alt="logo"><h5 class="white-text">OpenEnsat</h5></a>
-=======
->>>>>>> c4346a7c5c9098f38b920859a0cdbf119ade0f96
+
+
                 </div>
                 <!-- /footer logo -->
 
