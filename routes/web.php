@@ -28,13 +28,26 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/c',function(){
-    $c=\App\Course::all();
+   /* $c=\App\Course::all();
     foreach ($c as $cs){
         echo $cs->title." : <br> mes postes : <br>";
        foreach ($cs->posts() as $p){
-         echo   $p->title;
+         echo   "post : ".$p->title."<br>";
+         echo "comments : <br>";
+         foreach ($p->comments() as $com){
+             echo "comment : ";
+             echo $com->comment." ";
+             foreach ($com->user() as $u){
+                 echo "it is ok ";
+                 echo "commenteur : ".$u->name;
+             }
+         }
        }
-    }
+       echo "<br>";
+    } */
+   $c=\App\Comment::all();
+   foreach ($c as $com)
+       echo $com->comment." par ".$com->user()->name;
 });
 Route::get('/s',function (){
    $p=Post::all()->where('course_id','=',1);

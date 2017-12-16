@@ -13,4 +13,7 @@ class Comment extends Model
         $id=$this->attributes['posts_id'];
         return Post::all()->where('id','=',$id)->first();
     }
+    public function user(){
+        return User::Where('id','=',$this->attributes['user_id'])->first();
+    }
 }

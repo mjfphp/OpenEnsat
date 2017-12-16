@@ -11,7 +11,7 @@ class Course extends Model
 
     public function posts()
     {
-        $id=$this->attributes['id'];gi
+        $id=$this->attributes['id'];
         return Post::all()->where('course_id','=',$id);
     }
 }
