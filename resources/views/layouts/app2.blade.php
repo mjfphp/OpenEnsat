@@ -50,38 +50,37 @@
 <footer id="footer" class="sm-padding bg-dark">
 
     <!-- Container -->
-    <div class="container">
+    <div class="container footer-cnt">
 
         <!-- Row -->
-        <div class="row">
+        <div class="footer col-md-offset-2">
 
-            <div class="col-md-12">
 
                 <!-- footer logo -->
-                <div class="footer-logo">
+                <div class="logo-cnt col-md-3 col-xs-4 col-sm-4">
+                    <a href="index.html">
+                      <span class="col-md-3 col-xs-3 col-sm-3">
+                        <img class="logo" src="{{ asset('img/logo-alt.png') }}" alt="logo">
+                      </span>
+                      <span class="nom-bar-haut col-md-2 col-sm-2">OpenEnsat</span>
+                    </a>
 
-                    <a href="index.html"><h5 class="white-text">OpenEnsat</h5><img src="{{asset('img/logo-alt.png')}}" alt="logo"></a>
                 </div>
                 <!-- /footer logo -->
 
                 <!-- footer follow -->
-                <ul class="footer-follow">
+                <ul class="footer-follow col-md-4 col-xs-4">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                 </ul>
                 <!-- /footer follow -->
 
                 <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                <div class="footer-copyright col-md-4 col-sm-4">
+                    <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">NAJIH DRISS <3</a></p>
                 </div>
                 <!-- /footer copyright -->
-
-            </div>
 
         </div>
         <!-- /Row -->
