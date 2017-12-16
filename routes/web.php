@@ -25,4 +25,3 @@ Route::get('auth/facebook/callback', ['as' => 'auth/facebook/callback' , 'uses' 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
