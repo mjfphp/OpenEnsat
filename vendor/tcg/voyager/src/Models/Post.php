@@ -2,6 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
+use App\Course;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class Post extends Model
 {
     use Translatable;
 
-    protected $translatable = ['title', 'seo_title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords'];
+    protected $translatable = ['title', 'seo_title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords','course_id'];
 
     const PUBLISHED = 'PUBLISHED';
 
@@ -66,5 +67,10 @@ class Post extends Model
         $name = rtrim($image, '.'.$ext);
         // We merge original name + type + extension
         return $name.'-'.$type.'.'.$ext;
+    }
+
+    public function course(){
+        $id=$this->attributes['course_id'];
+       return Course::all()->where('id','=',$id);
     }
 }
