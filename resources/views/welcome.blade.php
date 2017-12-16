@@ -312,7 +312,7 @@
 
 
     <!-- Why Choose Us -->
-    <div id="service" class="section md-padding bg-grey">
+    <div id="service" class="section md-padding">
 
         <!-- Container -->
         <div class="container">
