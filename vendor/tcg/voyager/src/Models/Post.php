@@ -2,6 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
+use App\Comment;
 use App\Course;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -72,5 +73,10 @@ class Post extends Model
     public function course(){
         $id=$this->attributes['course_id'];
        return Course::all()->where('id','=',$id);
+    }
+
+    public function comments(){
+        $id=$this->attributes['id'];
+        return Comment::all()->where('id','=',$id);
     }
 }
