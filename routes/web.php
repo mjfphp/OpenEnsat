@@ -50,9 +50,12 @@ Route::get('/c',function(){
        echo $com->comment." par ".$com->user()->name;
 });
 Route::get('/s',function (){
-   $p=Post::all()->where('course_id','=',1);
+   $p=Post::all();
    foreach ($p as $po){
-       echo $po->title;
+
+       echo "<h1>".$po->title."</h1><br>";
+       echo $po->body."<br>";
+       echo "<img src=\"/storage/app/public/".$po->image."\" /> <br>";
    }
 
 });
