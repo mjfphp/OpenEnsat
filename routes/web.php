@@ -1,16 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
+
 use TCG\Voyager\Models\Post;
+use  \Illuminate\Support\Facades\Redis;
 
 
 Route::get('/', function () {
@@ -45,9 +39,12 @@ Route::get('/c',function(){
        }
        echo "<br>";
     } */
-   $c=\App\Comment::all();
+  $r=Redis::incr('v');
+  echo $r;
+   /*  $c=\App\Comment::all();
    foreach ($c as $com)
        echo $com->comment." par ".$com->user()->name;
+   */
 });
 Route::get('/s',function (){
    $p=Post::all();
