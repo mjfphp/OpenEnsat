@@ -1785,6 +1785,6 @@ header {
     color: #FFFFFF;
     font-weight: bold;
 }
-.img-circle {
-    border-radius: 50%;
+.text-white {
+    color: white;
 }

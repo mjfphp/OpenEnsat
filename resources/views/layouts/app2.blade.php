@@ -65,6 +65,8 @@
                       <span class="nom-bar-haut col-md-2 col-sm-2">OpenEnsat</span>
                     </a>
 
+
+
                 </div>
                 <!-- /footer logo -->
 
