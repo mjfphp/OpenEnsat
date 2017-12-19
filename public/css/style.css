@@ -280,6 +280,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	display: none;
 }
 
+#nav.nav-transparent .logo-cnt .nom-bar-haut {
+    color: white;
+}
+
+#nav.fixed-nav .logo-cnt .nom-bar-haut {
+    color: #696969;
+}
+
 #nav.fixed-nav .logo-cnt .logo-alt {
     display: none;
 }
@@ -1766,7 +1774,6 @@ header {
     width: 20%;
 }
 .nom-bar-haut{
-    color: #696969;
     top: 25%;
     font-weight: bolder;
 }

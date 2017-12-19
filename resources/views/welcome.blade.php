@@ -22,8 +22,10 @@
                         <!-- Logo -->
                         <div class="logo-cnt">
                             <a href="{{ url('/') }}">
-                        <span class="col-md-4 col-sm-4 col-xs-4"><img class="logo" src="img/logo.png" alt="logo">
-                        <img class="logo-alt" src="img/logo-alt.png" alt="logo"></span>
+                            <span class="col-md-4 col-sm-4 col-xs-4">
+                              <img class="logo" src="img/logo.png" alt="logo">
+                              <img class="logo-alt" src="img/logo-alt.png" alt="logo">
+                            </span>
                                 <span class="nom-bar-haut col-md-4">OpenEnsat</span>
                             </a>
 
@@ -56,7 +58,9 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="home-content">
                                 <img class="logo logo-middle" src="img/logo-alt.png" alt="logo">
-                                <h1 class="white-text title">OpenEnsat</h1>
+                                <div class="section-header text-center">
+                                  <h1 class="white-text title">OpenEnsat</h1>
+                                </div>
                                 <p class="white-text">Nous vous présentons tous les cours dont vous aurez besoin pour devenir compétent dans tous domaine.</br>Notre site vous permettra de maitriser les sujets proposés que vous avez suivis.</p>
                                 @if (Route::has('login'))
                                     <div class="top-right links">

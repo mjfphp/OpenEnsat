@@ -6,6 +6,36 @@
 </head>
 <body>
     <style>
+    .logo-cnt {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      padding: 0;
+      font-size: 18px;
+      line-height: 20px;
+    }
+    .logo-cnt a {
+      display: flex;
+      justify-content: center;
+    }
+    .logo-cnt .logo {
+        max-height: 50px;
+        display: block;
+    }
+    .logo-cnt a{
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: black;
+    }
+    .nom-bar-haut{
+      position: relative;
+      top: 25%;
+    }
+    .logo-cnt span{
+      float: left;
+    }
+
         @media only screen and (max-width: 600px) {
             .inner-body {
                 width: 100% !important;
@@ -27,9 +57,20 @@
         <tr>
             <td align="center">
                 <table class="content" width="100%" cellpadding="0" cellspacing="0">
-                    {{ $header or '' }}
+                  <div class="container">
+                          <!-- Logo -->
+                          <div class="logo-cnt">
+                              <a href="{{ url('/') }}">
+                              <span class="col-md-4 col-sm-4 col-xs-4">
+                                <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
+                              </span>
+                              <span class="nom-bar-haut col-md-4">OpenEnsat</span>
+                              </a>
 
-                    <!-- Email Body -->
+                          </div>
+
+
+                  </div>
                     <tr>
                         <td class="body" width="100%" cellpadding="0" cellspacing="0">
                             <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0">
