@@ -262,12 +262,15 @@ class Voyager
             );
 
             // Loop through all the packages and get the version of voyager
-            foreach ($file->packages as $package) {
+            if($file){
+                 foreach ($file->packages as $package) {
                 if ($package->name == 'tcg/voyager') {
                     $this->version = $package->version;
                     break;
                 }
+              }
             }
+           
         }
     }
 

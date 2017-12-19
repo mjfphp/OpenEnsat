@@ -4,7 +4,8 @@
 <br>
 <br>
 
-
+<br>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -60,7 +61,13 @@
                                 <button type="submit" class="main-btn">
                                     Se connecter
                                 </button>
-
+                                </br>
+                                <button class="main-btn">
+                                    <a class="btn btn-link text-white" href="{{ URL::route('auth/facebook') }}">
+                                        Facebook
+                                    </a>
+                                </button>
+                                </br>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Mot de passe oublié ?
                                 </a>
@@ -73,7 +80,8 @@
     </div>
 </div>
 <br>
-<br><br>
+<br>
+<br>
 <br>
 <br>
 <br>

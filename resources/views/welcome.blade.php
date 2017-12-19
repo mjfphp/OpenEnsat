@@ -20,10 +20,12 @@
 
                     <div class="navbar-header">
                         <!-- Logo -->
-                        <div class="navbar-brand">
-                            <a href="index.html">
-                        <span class="col-md-4"><img class="logo" src="img/logo.png" alt="logo">
-                        <img class="logo-alt" src="img/logo-alt.png" alt="logo"></span>
+                        <div class="logo-cnt">
+                            <a href="{{ url('/') }}">
+                            <span class="col-md-4 col-sm-4 col-xs-4">
+                              <img class="logo" src="img/logo.png" alt="logo">
+                              <img class="logo-alt" src="img/logo-alt.png" alt="logo">
+                            </span>
                                 <span class="nom-bar-haut col-md-4">OpenEnsat</span>
                             </a>
 
@@ -41,8 +43,8 @@
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Cours</a></li>
-                        <li><a href="#service">Forum</a></li>
+                        <li><a href="#portfolio">Cours Récents</a></li>
+                        <li><a href="#service">Nos Services</a></li>
                     </ul>
                     <!-- /Main navigation -->
 
@@ -56,7 +58,9 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="home-content">
                                 <img class="logo logo-middle" src="img/logo-alt.png" alt="logo">
-                                <h1 class="white-text title">OpenEnsat</h1>
+                                <div class="section-header text-center">
+                                  <h1 class="white-text title">OpenEnsat</h1>
+                                </div>
                                 <p class="white-text">Nous vous présentons tous les cours dont vous aurez besoin pour devenir compétent dans tous domaine.</br>Notre site vous permettra de maitriser les sujets proposés que vous avez suivis.</p>
                                 @if (Route::has('login'))
                                     <div class="top-right links">
@@ -155,7 +159,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team1.jpg" alt="">
+                            <img class="img-responsive" src="./img/team1.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/bouchaala.zineb"><i class="fa fa-facebook"></i></a>
@@ -175,7 +179,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team2.jpg" alt="">
+                            <img class="img-responsive" src="./img/team2.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/profile.php?id=100012412780050"><i class="fa fa-facebook"></i></a>
@@ -195,7 +199,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive img-circle" src="./img/team3.jpg" alt="">
+                            <img class="img-responsive" src="./img/team3.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/driss.najih.37"><i class="fa fa-facebook"></i></a>
@@ -215,7 +219,7 @@
                 <div class="col-sm-3">
                     <div class="team">
                         <div class="team-img">
-                            <img class="img-responsive " src="./img/team4.jpg" alt="">
+                            <img class="img-responsive" src="./img/team4.jpg" alt="">
                             <div class="overlay">
                                 <div class="team-social">
                                     <a href="https://www.facebook.com/hamza.derraz.5"><i class="fa fa-facebook"></i></a>
@@ -239,4 +243,128 @@
 
     </div>
     <!-- /Team -->
-    @endsection
+
+    <!-- Cours Récents -->
+    <div id="portfolio" class="section md-padding bg-grey">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section header -->
+                <div class="section-header text-center">
+                    <h2 class="title">Cours Récents</h2>
+                </div>
+                <!-- /Section header -->
+
+                <!-- Work -->
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work1.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span><h3>Cours_name</h3></span>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work1.jpg"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Work -->
+
+                <!-- Work -->
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work2.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span><h3>Cours_name</h3></span>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work2.jpg"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Work -->
+
+                <!-- Work -->
+                <div class="col-md-4 col-xs-6 work">
+                    <img class="img-responsive" src="./img/work3.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="work-content">
+                        <span><h3>Cours_name</h3></span>
+                        <div class="work-link">
+                            <a href="#"><i class="fa fa-external-link"></i></a>
+                            <a class="lightbox" href="./img/work3.jpg"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Work -->
+
+
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Cours Récents -->
+
+
+    <!-- Why Choose Us -->
+    <div id="service" class="section md-padding">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- why choose us content -->
+                <div class="col-md-6">
+                    <div class="section-header text-center">
+                        <h2 class="title">Nos Services</h2>
+                    </div>
+                    <p>Notre site vous offre divers opportunités. Vous pouvez : </p>
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>Lire des cours bien expliqués, ou que vous soyez, sur votre pc, tablette ou telephone.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>Passer des quiz pour connaître votre niveau et votre avancement dans nos cours.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>Commentez nos cours , parler avec d'autres étudiants et trouver les réponses de vos question.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>Et même publier vos propres cours s'ils sont vérifiés.</p>
+                    </div>
+                </div>
+                <!-- /why choose us content -->
+
+                <!-- About slider -->
+                <div class="col-md-6">
+                    <div id="about-slider" class="owl-carousel owl-theme">
+                        <img class="img-responsive" src="./img/about1.jpg" alt="">
+                        <img class="img-responsive" src="./img/about2.jpg" alt="">
+                        <img class="img-responsive" src="./img/about1.jpg" alt="">
+                        <img class="img-responsive" src="./img/about2.jpg" alt="">
+                    </div>
+                </div>
+                <!-- /About slider -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Why Choose Us -->
+
+@endsection
