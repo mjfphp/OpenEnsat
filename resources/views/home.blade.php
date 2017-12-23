@@ -1,27 +1,36 @@
-@extends('layouts.app3')
+@extends('layouts.app4')
 
-@section('nav')
-   @parent
-@endsection()
+@section('nav-child')
+<li>
+  <a href="#">hey</a>
+</li>
+@endsection
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+@section('main-left')
+<main class="col-md-9">
+    @foreach( $cours as $cour)
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+        <div class="row">
+          <div class="col-md-4 col-xs-6 work">
+              <img class="img-responsive" src='{{ $cour->image }}' alt="">
+              <div class="overlay"></div>
+              <div class="work-content">
+                  <span><h3>{{ $cour->title }}</h3></span>
+                  <div class="work-link">
+                      <a href="#"><i class="fa fa-external-link"></i></a>
+                      <a class="lightbox" href='{{ $cour->image }}'><i class="fa fa-search"></i></a>
+                  </div>
+              </div>
+          </div>
         </div>
-    </div>
-</div>
+
+    @endforeach
+    </main>
+@endsection
+
+
+@section('tags')
+
+ <a href="#">Web Tag</a>
+
 @endsection

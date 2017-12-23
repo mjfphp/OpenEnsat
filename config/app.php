@@ -180,7 +180,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         DevDojo\Chatter\ChatterServiceProvider::class,
 
-        Laravel\Socialite\SocialiteServiceProvider::class
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class
 
     ],
 

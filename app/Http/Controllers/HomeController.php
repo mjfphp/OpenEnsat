@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use App\Course;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $online=Redis::incr('ol');
-        return view('home');
+        return view('home')->with('cours',Course::all());
     }
 }
