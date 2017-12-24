@@ -2,6 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
+use App\Course;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Translatable;
@@ -27,4 +28,11 @@ class Category extends Model
     {
         return $this->belongsTo(self::class);
     }
+
+    public function courses(){
+        $id=$this->attributes['id'];
+        return Course::Where('category_id','=',$id);
+    }
+
+
 }
