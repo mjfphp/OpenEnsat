@@ -14,6 +14,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('category/{id}', 'HomeController@category');
+Route::get('course/{id}', 'HomeController@course');
+Route::get('post/{id}', 'HomeController@post');
+
 
 Route::get('auth/facebook', ['as' => 'auth/facebook' , 'uses' => 'Auth\LoginController@redirectToProvider' ]);
 Route::get('auth/facebook/callback', ['as' => 'auth/facebook/callback' , 'uses' => 'Auth\LoginController@handleProviderCallback' ]);
