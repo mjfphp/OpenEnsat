@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Role;
 use TCG\Voyager\Models\User;
+Illuminate\Contracts\Auth\Authenticatable;
 
 class UsersTableSeeder extends Seeder
 {

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 use App\Course;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with('cours',Course::all());
+
+        return view('home')
+            ->withCours(Course::all());
     }
 }

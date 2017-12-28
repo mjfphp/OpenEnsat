@@ -2,8 +2,12 @@
 
 namespace App;
 
+
+use App\Notifications\VerifyEmail;
+
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -15,7 +19,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','token'
     ];
 
     /**
@@ -29,5 +33,26 @@ class User extends \TCG\Voyager\Models\User
 
     public function comments(){
         return $this->hasMany('App/Comment');
+    }
+
+    /**
+     * Returns true if user is verified.
+     *
+     * @return bool
+     */
+    public function verified()
+    {
+        return $this->token === null;
+    }
+
+    /**
+     * Send the user a verification email.
+     *
+     * @return void
+     */
+
+    public function sendVerificationEmail()
+    {
+        $this->notify(new VerifyEmail($this));
     }
 }

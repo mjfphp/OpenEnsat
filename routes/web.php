@@ -22,6 +22,11 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::group(['middleware' => ['isVerified']], function () {
+    // …
+});
+
+Route::get('/verify/{token}','VerifyController@verify')->name('verify');
 
 Route::get('/c',function(){
    /* $c=\App\Course::all();
@@ -59,3 +64,7 @@ Route::get('/s',function (){
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

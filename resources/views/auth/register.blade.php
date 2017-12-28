@@ -77,7 +77,7 @@
                       <div class="form-group">
                           <div class="col-md-6 col-md-offset-4">
                               <button type="submit" class="main-btn">
-                                  Rénitialiser mot de passe
+                                  S'enregistrer
                               </button>
                           </div>
                       </div>

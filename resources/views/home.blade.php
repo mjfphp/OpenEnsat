@@ -28,6 +28,7 @@
     </main>
 @endsection
 
+<p>your account is {{auth()->user()->verified() ? 'Verified' : 'Not Verified'}}</p>
 
 @section('tags')
 
