@@ -34,4 +34,4 @@
 
 @endsection
 
-<p>your account is {{auth()->user()->verified() ? 'Verified' : 'Not Verified'}}</p>
+<!--<p>your account is {{auth()->user()->verified() ? 'Verified' : 'Not Verified'}}</p>-->

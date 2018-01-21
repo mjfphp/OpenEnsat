@@ -15,8 +15,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('auth/facebook', ['as' => 'auth/facebook' , 'uses' => 'Auth\LoginController@redirectToProvider' ]);
-Route::get('auth/facebook/callback', ['as' => 'auth/facebook/callback' , 'uses' => 'Auth\LoginController@handleProviderCallback' ]);
+Route::get('login/facebook','Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback' );
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
