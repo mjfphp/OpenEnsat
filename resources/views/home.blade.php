@@ -12,7 +12,7 @@
 
         <div class="row">
           <div class="col-md-4 col-xs-6 work">
-              <img class="img-responsive" src='{{ $cour->image }}' alt="">
+              <img class="img-responsive" src="/storage/app/public/{{$cour->image}}" alt="{{$cour->title}}" />
               <div class="overlay"></div>
               <div class="work-content">
                   <span><h3>{{ $cour->title }}</h3></span>
