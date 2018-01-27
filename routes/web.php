@@ -19,13 +19,18 @@ Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
 
 
-Route::get('auth/facebook', ['as' => 'auth/facebook' , 'uses' => 'Auth\LoginController@redirectToProvider' ]);
-Route::get('auth/facebook/callback', ['as' => 'auth/facebook/callback' , 'uses' => 'Auth\LoginController@handleProviderCallback' ]);
+Route::get('login/facebook','Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback' );
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::group(['middleware' => ['isVerified']], function () {
+    // …
+});
+
+Route::get('/verify/{token}','VerifyController@verify')->name('verify');
 
 Route::get('/c',function(){
    /* $c=\App\Course::all();
@@ -70,4 +75,3 @@ Route::get('/cs',function (){
         echo $cs->title."<br>";
     }
 });
-

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 use App\Course;
+
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\Post;
 
@@ -29,6 +28,7 @@ class HomeController extends Controller
     {
 
         return view('home')
+
             ->with('cours',Course::all())
             ->with('categories',Category::all());
     }
@@ -49,5 +49,6 @@ class HomeController extends Controller
         $p=Post::Where('id','=',$id)->first();
         return view('post')
             ->with('categories',Category::all());
+
     }
 }

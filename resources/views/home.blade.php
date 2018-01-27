@@ -30,9 +30,10 @@
     </main>
 @endsection
 
-
 @section('tags')
 
  <a href="#">Web Tag</a>
 
 @endsection
+
+<!--<p>your account is {{auth()->user()->verified() ? 'Verified' : 'Not Verified'}}</p>-->

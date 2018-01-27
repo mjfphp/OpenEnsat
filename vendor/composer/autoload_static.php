@@ -94,6 +94,7 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         'J' => 
         array (
             'JsonSchema\\' => 11,
+            'Jrean\\UserVerification\\' => 23,
         ),
         'I' => 
         array (
@@ -300,6 +301,10 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
+        'Jrean\\UserVerification\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jrean/laravel-user-verification/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -445,6 +450,7 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
     );
 
     public static $classMap = array (
+        'AddCategoryCoursId' => __DIR__ . '/../..' . '/database/migrations/2017_12_23_224836_AddCategoryCoursId.php',
         'AddColorRowToChatterDiscussions' => __DIR__ . '/../..' . '/database/migrations/2016_08_03_121747_add_color_row_to_chatter_discussions.php',
         'AddControllerToDataTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_06_000000_add_controller_to_data_types_table.php',
         'AddCoursID' => __DIR__ . '/../..' . '/database/migrations/2017_12_16_113201_AddCoursID.php',
@@ -455,6 +461,7 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         'AddPolicyNameToDataTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_05_210000_add_policyname_to_data_types_table.php',
         'AddRouteToMenuItemsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_13_000000_add_route_to_menu_items_table.php',
         'AddSlugFieldForDiscussions' => __DIR__ . '/../..' . '/database/migrations/2016_08_02_183143_add_slug_field_for_discussions.php',
+        'AddTokenUser' => __DIR__ . '/../..' . '/database/migrations/2017_12_28_092812_AddTokenUser.php',
         'AddVoyagerUserFields' => __DIR__ . '/../..' . '/database/migrations/2016_01_01_000000_add_voyager_user_fields.php',
         'AlterPostNullableFieldsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_11_000000_alter_post_nullable_fields_table.php',
         'App\\ChatterCategory' => __DIR__ . '/../..' . '/app/ChatterCategory.php',
@@ -462,7 +469,6 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         'App\\ChatterPost' => __DIR__ . '/../..' . '/app/ChatterPost.php',
         'App\\ChatterUserDiscussion' => __DIR__ . '/../..' . '/app/ChatterUserDiscussion.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
-
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -472,16 +478,20 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\VerifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/VerifyController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\IsVerified' => __DIR__ . '/../..' . '/app/Http/Middleware/IsVerified.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Notifications\\VerifyEmail' => __DIR__ . '/../..' . '/app/Notifications/VerifyEmail.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Providers\\ViewComposerServiceProvider' => __DIR__ . '/../..' . '/app/Providers/ViewComposerServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Arrilot\\Widgets\\AbstractWidget' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/AbstractWidget.php',
@@ -2838,6 +2848,22 @@ class ComposerStaticIniteec8559ebcbb0fed50bf394e537b8cee
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jrean\\UserVerification\\Events\\UserVerified' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Events/UserVerified.php',
+        'Jrean\\UserVerification\\Events\\VerificationEmailSent' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Events/VerificationEmailSent.php',
+        'Jrean\\UserVerification\\Exceptions\\ModelNotCompliantException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/ModelNotCompliantException.php',
+        'Jrean\\UserVerification\\Exceptions\\TokenMismatchException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/TokenMismatchException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserHasNoEmailException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserHasNoEmailException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserIsVerifiedException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserIsVerifiedException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserNotFoundException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserNotFoundException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserNotVerifiedException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserNotVerifiedException.php',
+        'Jrean\\UserVerification\\Facades\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Facades/UserVerification.php',
+        'Jrean\\UserVerification\\Mail\\VerificationTokenGenerated' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Mail/VerificationTokenGenerated.php',
+        'Jrean\\UserVerification\\Middleware\\IsVerified' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Middleware/IsVerified.php',
+        'Jrean\\UserVerification\\Traits\\RedirectsUsers' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/RedirectsUsers.php',
+        'Jrean\\UserVerification\\Traits\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/UserVerification.php',
+        'Jrean\\UserVerification\\Traits\\VerifiesUsers' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/VerifiesUsers.php',
+        'Jrean\\UserVerification\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/UserVerification.php',
+        'Jrean\\UserVerification\\UserVerificationServiceProvider' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/UserVerificationServiceProvider.php',
         'JsonSchema\\Constraints\\BaseConstraint' => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema/Constraints/BaseConstraint.php',
         'JsonSchema\\Constraints\\CollectionConstraint' => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema/Constraints/CollectionConstraint.php',
         'JsonSchema\\Constraints\\Constraint' => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php',
