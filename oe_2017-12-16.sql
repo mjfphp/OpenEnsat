@@ -886,11 +886,7 @@ CREATE TABLE `roles` (
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 
-INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`)
-VALUES
-	(1,'admin','Administrator','2017-12-01 14:35:12','2017-12-01 14:35:12'),
-	(2,'user','Normal User','2017-12-01 14:35:12','2017-12-01 14:35:12'),
-	(3,'poster','poster','2017-12-02 13:01:55','2017-12-02 13:01:55');
+
 
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;

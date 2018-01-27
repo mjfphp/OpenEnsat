@@ -10,7 +10,7 @@
 <main class="col-md-9">
     @foreach( $cours as $cour)
 
-        <div class="row">
+
           <div class="col-md-4 col-xs-6 work">
               <img class="img-responsive" src="/storage/app/public/{{$cour->image}}" alt="{{$cour->title}}" />
               <div class="overlay"></div>
@@ -22,7 +22,6 @@
                   </div>
               </div>
           </div>
-        </div>
 
     @endforeach
     </main>
