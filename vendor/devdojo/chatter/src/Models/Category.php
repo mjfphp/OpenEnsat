@@ -2,6 +2,7 @@
 
 namespace DevDojo\Chatter\Models;
 
+use App\Course;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model

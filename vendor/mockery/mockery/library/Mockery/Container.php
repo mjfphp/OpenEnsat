@@ -24,6 +24,7 @@ use Mockery\Generator\Generator;
 use Mockery\Generator\MockConfigurationBuilder;
 use Mockery\Loader\Loader as LoaderInterface;
 
+
 class Container
 {
     const BLOCKS = \Mockery::BLOCKS;
@@ -71,10 +72,14 @@ class Container
      */
     protected $_namedMocks = array();
 
+
+
     public function __construct(Generator $generator = null, LoaderInterface $loader = null)
     {
         $this->_generator = $generator ?: \Mockery::getDefaultGenerator();
         $this->_loader = $loader ?: \Mockery::getDefaultLoader();
+        UserVerification::generate($user);
+        UserVerification::send($user, 'My Custom E-mail Subject');
     }
 
     /**

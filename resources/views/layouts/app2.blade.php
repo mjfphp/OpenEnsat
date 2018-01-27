@@ -62,7 +62,7 @@
                       <span class="col-md-3 col-xs-3 col-sm-3">
                         <img class="logo" src="{{ asset('img/logo-alt.png') }}" alt="logo">
                       </span>
-                      <span class="nom-bar-haut col-md-2 col-sm-2">OpenEnsat</span>
+                      <span class="nom-bar-haut col-md-2 col-sm-2 white-text">OpenEnsat</span>
                     </a>
 
 

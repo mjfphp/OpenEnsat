@@ -65,8 +65,8 @@
 
                                     <div class="top-right links">
 
-                                            <button class="white-btn"><a href="{{ url('/login') }}" class="a-login">Login</a></button>
-                                            <button class="main-btn"><a href="{{ url('/register') }}" class="a-register">Register</a></button>
+                                        <a href="{{ url('/login') }}" class="a-login"><button class="white-btn">Login</button></a>
+                                        <a href="{{ url('/register') }}" class="a-register"><button class="main-btn">Register</button></a>
 
                                     </div>
                             

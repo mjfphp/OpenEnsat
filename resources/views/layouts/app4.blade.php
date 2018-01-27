@@ -48,7 +48,7 @@
 						<h3 class="title">Category</h3>
 						<div class="widget-category">
               @foreach( $categories as $categorie)
-              <a href="#">{{$categorie->name}}<span>({{$categorie->courses()->count()}})</span></a>
+              <a href="/category/{{($categorie->id)}}">{{$categorie->name}}<span>({{$categorie->courses()->count()}})</span></a>
               @endforeach
 						</div>
 					</div>

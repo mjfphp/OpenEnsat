@@ -1,19 +1,13 @@
-@extends('layouts.app3')
+@extends('layouts.app')
 
 @section('content')
-<br>
-<br>
-
-<br>
-<br>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div>
-              <div class="section-header text-center">
-      					<h2 class="title"> Se connecter</h2>
-      				</div>
-                <div >
+            <div class="panel panel-default">
+                <div class="panel-heading">Login</div>
+
+                <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -45,31 +39,24 @@
                             </div>
                         </div>
 
-                        <div class="contact-form">
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
-
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Se souvenir de moi
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
                                 </div>
                             </div>
+                        </div>
 
-
-
-                            <div class="col-md-8 col-md-offset-3">
-                                <button type="submit" class="main-btn">
-                                    Se connecter
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
                                 </button>
-                                </br>
-                                <button class="main-btn">
-                                    <a class="btn btn-link text-white" href="{{ URL::route('auth/facebook') }}">
-                                        Facebook
-                                    </a>
-                                </button>
-                                </br>
+
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Mot de passe oublié ?
+                                    Forgot Your Password?
                                 </a>
                             </div>
                         </div>
@@ -79,12 +66,4 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
 @endsection
