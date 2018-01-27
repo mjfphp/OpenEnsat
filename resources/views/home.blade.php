@@ -8,6 +8,7 @@
 
 @section('main-left')
 <main class="col-md-9">
+    @if($cours)
     @foreach( $cours as $cour)
 
         <div class="row">
@@ -17,7 +18,7 @@
               <div class="work-content">
                   <span><h3>{{ $cour->title }}</h3></span>
                   <div class="work-link">
-                      <a href="#"><i class="fa fa-external-link"></i></a>
+                      <a href="/course/{{$cour->id}}}"><i class="fa fa-external-link"></i></a>
                       <a class="lightbox" href='{{ $cour->image }}'><i class="fa fa-search"></i></a>
                   </div>
               </div>
@@ -25,6 +26,7 @@
         </div>
 
     @endforeach
+    @endif
     </main>
 @endsection
 

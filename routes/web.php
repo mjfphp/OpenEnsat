@@ -14,7 +14,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('category/{id}', 'HomeController@category');
+Route::get('category/{id}', 'HomeController@category')->name('category');
 Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
 
@@ -61,5 +61,13 @@ Route::get('/s',function (){
        echo "<img src=\"/storage/app/public/".$po->image."\" /> <br>";
    }
 
+});
+
+Route::get('/cs',function (){
+    $c=\TCG\Voyager\Models\Category::Where('id','=',3);
+    foreach ($c->courses() as $cs)
+    {
+        echo $cs->title."<br>";
+    }
 });
 

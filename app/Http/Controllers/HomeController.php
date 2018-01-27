@@ -34,11 +34,15 @@ class HomeController extends Controller
     }
 
     public function category($id){
-        return Category::Where('id','=',$id)->first();
+      //  $id=decrypt($id);
+        $categories=Category::all();
+        return view('home')
+            ->with('categories',$categories)
+            ->with('cours',Course::Where('category_id','=',$id));
     }
 
     public function course($id){
-        return Course::Where('id','=',$id)->first();
+        return view('posts')->withCour(Course::Where('id','=',$id)->first());
     }
 
     public function post($id){
