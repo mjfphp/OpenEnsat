@@ -13,7 +13,8 @@
                 <main id="main" class="col-md-9">
                     <div class="blog">
                         <div class="blog-img">
-                            <img class="img-responsive" src="./img/blog-post.jpg" alt="">
+                            <img src="/storage/app/public/{{$post->image}}"/> <br>
+
                         </div>
                         <div class="blog-content">
                             <ul class="blog-meta">

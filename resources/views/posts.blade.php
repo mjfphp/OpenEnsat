@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <div class="blog">
                     <div class="blog-img">
-                        <img class="img-responsive" src="/storage/app/public/{{$p->image}}\" alt="{{$p->title}}">
+                        <img  class="img-responsive" src="/storage/app/public/{{$p->image}}" alt="{{$p->title}}"/>
                     </div>
                     <div class="blog-content">
                         <ul class="blog-meta">
