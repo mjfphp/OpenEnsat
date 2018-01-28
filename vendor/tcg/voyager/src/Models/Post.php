@@ -77,6 +77,6 @@ class Post extends Model
 
     public function comments(){
         $id=$this->attributes['id'];
-        return Comment::all()->where('id','=',$id);
+        return Comment::all()->where('posts_id','=',$id);
     }
 }

@@ -17,23 +17,20 @@
                         </div>
                         <div class="blog-content">
                             <ul class="blog-meta">
-                                <li><i class="fa fa-user"></i>John doe</li>
-                                <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                                <li><i class="fa fa-comments"></i>57</li>
+                                <li><i class="fa fa-user"></i>{{$postOwner->name}}</li>
+                                <li><i class="fa fa-clock-o"></i>{{date("d M",strtotime($post->created_at))}}</li>
+                                <li><i class="fa fa-comments"></i>{{$commentsNumber}}</li>
                             </ul>
-                            <h3>Morbi mattis felis at nunc. Duis viverra</h3>
-                            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+                            <h3>{{$post->excerpt}}</h3>
+                            <p>{{$post->body}}</p>
                         </div>
 
                         <!-- blog tags -->
                         <div class="blog-tags">
                             <h5>Tags :</h5>
-                            <a href="#"><i class="fa fa-tag"></i>Web</a>
-                            <a href="#"><i class="fa fa-tag"></i>Design</a>
-                            <a href="#"><i class="fa fa-tag"></i>Marketing</a>
-                            <a href="#"><i class="fa fa-tag"></i>Development</a>
-                            <a href="#"><i class="fa fa-tag"></i>Branding</a>
-                            <a href="#"><i class="fa fa-tag"></i>Photography</a>
+                            @foreach(explode(",",$post->meta_keywords) as $meta_keyword)
+                            <a href="#"><i class="fa fa-tag"></i>{{$meta_keyword}}</a>
+                            @endforeach
                         </div>
                         <!-- blog tags -->
 
@@ -61,69 +58,23 @@
 
                         <!-- blog comments -->
                         <div class="blog-comments">
-                            <h3 class="title">(13) Comments</h3>
+                            <h3 class="title">{{"(".$commentsNumber.")"}} Comments</h3>
 
                             <!-- comment -->
-                            <div class="media">
-                                <div class="media-left">
-                                    <img class="media-object" src="./img/perso2.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
-                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                </div>
-                            </div>
+                            @foreach( $comments as $comment)
+                              <div class="media">
+                                  <div class="media-left">
+                                      <img class="media-object" src="./img/perso2.jpg" alt="">
+                                  </div>
+                                  <div class="media-body">
+                                      <h4 class="media-heading">{{$comment->user()->name}}<span class="time">{{\Carbon\Carbon::createFromTimeStamp(strtotime($comment->created_at))->diffForHumans()}}
+                                    <!--  </span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4> -->
+                                      <p>{{$comment->comment}}</p>
+                                  </div>
+                              </div>
+                            @endforeach
                             <!-- /comment -->
 
-                            <!-- comment -->
-                            <div class="media">
-                                <div class="media-left">
-                                    <img class="media-object" src="./img/perso1.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
-                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                </div>
-
-                                <!-- author reply comment -->
-                                <div class="media author">
-                                    <div class="media-left">
-                                        <img class="media-object" src="./img/perso2.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
-                                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                    </div>
-                                </div>
-                                <!-- /comment -->
-
-                                <!-- reply comment -->
-                                <div class="media">
-                                    <div class="media-left">
-                                        <img class="media-object" src="./img/perso2.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
-                                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                    </div>
-                                </div>
-                                <!-- /comment -->
-
-                            </div>
-                            <!-- /comment -->
-
-
-                            <!-- comment -->
-                            <div class="media">
-                                <div class="media-left">
-                                    <img class="media-object" src="./img/perso.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Joe Doe<span class="time">2 min ago</span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4>
-                                    <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-                                </div>
-                            </div>
-                            <!-- /comment -->
 
                         </div>
                         <!-- /blog comments -->
@@ -131,11 +82,12 @@
                         <!-- reply form -->
                         <div class="reply-form">
                             <h3 class="title">Leave a reply</h3>
-                            <form>
-                                <input class="input" type="text" placeholder="Name">
-                                <input class="input" type="email" placeholder="Email">
-                                <textarea placeholder="Add Your Commment"></textarea>
-                                <button type="submit" class="main-btn">Submit</button>
+                            <form class='formCom' id="form" method="POST" data-id="{{ $post->id }}" data-info="/post/">
+                                {{ csrf_field()}}
+                                <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
+                                <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
+                                <textarea placeholder="Add Your Commment" name="text" ></textarea>
+                                <button type="submit" class="main-btn submitBtn">Submit</button>
                             </form>
                         </div>
                         <!-- /reply form -->
@@ -160,11 +112,9 @@
                     <div class="widget">
                         <h3 class="title">Category</h3>
                         <div class="widget-category">
-                            <a href="#">Web Design<span>(7)</span></a>
-                            <a href="#">Marketing<span>(142)</span></a>
-                            <a href="#">Web Development<span>(74)</span></a>
-                            <a href="#">Branding<span>(60)</span></a>
-                            <a href="#">Photography<span>(5)</span></a>
+                          @foreach( $categories as $categorie)
+                          <a href="/category/{{($categorie->id)}}">{{$categorie->name}}<span>({{$categorie->courses()->count()}})</span></a>
+                          @endforeach
                         </div>
                     </div>
                     <!-- /Category -->
@@ -254,4 +204,14 @@
         <!-- /Container -->
 
     </div>
+    @endsection
+
+    @section('js')
+      $(document).ready(function(){
+              $('.submitBtn').on('click',function(){
+                var post_id = $('#form').attr("data-id");
+                var action = $('#form').attr("data-info");
+                $('#form').attr('action',action+post_id);
+              })
+      })
     @endsection

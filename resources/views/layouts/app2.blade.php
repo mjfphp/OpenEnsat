@@ -93,12 +93,13 @@
 </footer>
 <!-- /Footer -->
 <!-- jQuery Plugins -->
+
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-
+@yield('js')
 </body>
 
 </html>

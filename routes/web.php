@@ -17,6 +17,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('category/{id}', 'HomeController@category')->name('category');
 Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
+Route::post('post/{id}', 'HomeController@comment');
+
 
 
 Route::get('login/facebook','Auth\LoginController@redirectToProvider');
