@@ -1,9 +1,10 @@
 @extends('layouts.app3')
 
 @section('nav')
-      @yield('nav-child')
-      <li class="has-dropdown">
-        <a>Déconnexion</a>
+	<li><a href="/forums">Froums</a></li>
+	<li><a href="/welcome">Welcome</a></li>
+	<li class="has-dropdown">
+        <a>{{Auth::user()->name}}</a>
         <ul class="dropdown">
           <li>
             <a
@@ -48,7 +49,7 @@
 						<h3 class="title">Category</h3>
 						<div class="widget-category">
               @foreach( $categories as $categorie)
-              <a href="/category/{{($categorie->id)}}">{{$categorie->name}}<span>({{$categorie->courses()->count()}})</span></a>
+              <a href="/category/{{$categorie->id}}">{{$categorie->name}}<span>({{$categorie->courses()->count()}})</span></a>
               @endforeach
 						</div>
 					</div>

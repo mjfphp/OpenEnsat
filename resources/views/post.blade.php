@@ -36,7 +36,9 @@
                 @foreach( $comments as $comment)
                   <div class="media">
                       <div class="media-left">
-                          <img class="media-object" src="./img/perso2.jpg" alt="">
+
+                          <img class="media-object"  style="max-width: 40px;max-height: 40px"
+                               src="/storage/app/public/{{$comment->user()->avatar}}" >
                       </div>
                       <div class="media-body">
                           <h4 class="media-heading">{{$comment->user()->name}}
@@ -63,8 +65,7 @@
                 <h3 class="title">Leave a reply</h3>
                 <form  id="form" method="POST" data-id="{{ $post->id }}" data-info="/post/">
                     {{ csrf_field()}}
-                    <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
-                    <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
+                    <input class="input" type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     <textarea placeholder="Add Your Commment" name="text" ></textarea>
                     <button type="submit" class="main-btn submitBtn">Submit</button>
                 </form>

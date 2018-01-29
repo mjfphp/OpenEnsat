@@ -36,12 +36,8 @@ class HomeController extends Controller
     }
 
     public function category($id){
-      //  $id=decrypt($id);
-        $categories=Category::all();
         return view('home')
-            ->with('categories',$categories)
-            ->with('cours',Course::Where('category_id','=',$id))
-            ->with('coursp',Course::inRandomOrder()->take(5)->get());
+            ->with('cours',Course::all()->where('category_id','=',$id));
     }
 
     public function course($id){

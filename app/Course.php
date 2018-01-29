@@ -14,4 +14,6 @@ class Course extends Model
         $id=$this->attributes['id'];
         return Post::all()->where('course_id','=',$id);
     }
+
+
 }

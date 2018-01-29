@@ -31,7 +31,7 @@ class Category extends Model
 
     public function courses(){
         $id=$this->attributes['id'];
-        return Course::Where('category_id','=',$id);
+        return Course::Where('category_id','=',$id)->get();
     }
 
 
