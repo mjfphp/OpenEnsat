@@ -1,18 +1,13 @@
 @extends('layouts.app4')
 
-@section('nav-child')
-<li>
-  <a href="#">hey</a>
-</li>
-@endsection
+
 
 @section('main-left')
 <main class="col-md-9">
-    @if($cours)
+<!-- DRIS 7AMD -->
     @foreach( $cours as $cour)
 
-
-          <div class="col-md-4 col-xs-6 work">
+<div class="col-md-4 col-xs-6 work">
               <img class="img-responsive" src="/storage/app/public/{{$cour->image}}" alt="{{$cour->title}}" />
               <div class="overlay"></div>
               <div class="work-content">
@@ -25,14 +20,10 @@
           </div>
 
     @endforeach
-    @endif
+
     </main>
 @endsection
 
-@section('tags')
 
- <a href="#">Web Tag</a>
-
-@endsection
 
 <!--<p>your account is {{auth()->user()->verified() ? 'Verified' : 'Not Verified'}}</p>-->

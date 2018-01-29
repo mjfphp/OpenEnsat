@@ -7,14 +7,12 @@ use TCG\Voyager\Models\Post;
 use  \Illuminate\Support\Facades\Redis;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('category/{id}', 'HomeController@category')->name('category');
+Route::get('category/{id}', 'HomeController@category');
 Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
 Route::post('post/{id}', 'HomeController@comment');
@@ -31,7 +29,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => ['isVerified']], function () {
     // …
 });
-
+Route::get('/welcome',function (){
+    return view('welcome');
+})->name('welcome');
 Route::get('/verify/{token}','VerifyController@verify')->name('verify');
 
 Route::get('/c',function(){
@@ -52,13 +52,23 @@ Route::get('/c',function(){
        }
        echo "<br>";
     } */
-  $r=Redis::incr('v');
-  echo $r;
-   /*  $c=\App\Comment::all();
-   foreach ($c as $com)
-       echo $com->comment." par ".$com->user()->name;
-   */
+ $c=\App\Course::all();
+    foreach ($c as $cs) {
+        echo $cs->category_id ."  <br> ";
+    }
+    echo "Selon Categories : <br>";
+    $i=0;
+    $css=\App\Course::all()->where('category_id','=',4);
+    foreach ($css as $cs) {
+        echo $cs->categoy_id . " : <br> ";
+        $i++;
+        echo $cs->posts()->count();
+    }
+    echo $i;
+
+
 });
+
 Route::get('/s',function (){
    $p=Post::all();
    foreach ($p as $po){
