@@ -39,8 +39,15 @@
                           <img class="media-object" src="./img/perso2.jpg" alt="">
                       </div>
                       <div class="media-body">
-                          <h4 class="media-heading">{{$comment->user()->name}}<span class="time">{{\Carbon\Carbon::createFromTimeStamp(strtotime($comment->created_at))->diffForHumans()}}
-                        <!--  </span><a href="#" class="reply">Reply <i class="fa fa-reply"></i></a></h4> -->
+                          <h4 class="media-heading">{{$comment->user()->name}}
+                            <span class="time">{{\Carbon\Carbon::createFromTimeStamp(strtotime($comment->created_at))->diffForHumans()}}</span>
+                          <form class='formCom'>
+                            {{ csrf_field()}}
+                            <input type="hidden" name="_method" value="delete" class="method">
+                            <a href="#" class="reply edit" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="#" class="reply delete" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-trash fa-lg"></i></a>
+                          </form>
+                          </h4>
                           <p>{{$comment->comment}}</p>
                       </div>
                   </div>
@@ -54,7 +61,7 @@
             <!-- reply form -->
             <div class="reply-form">
                 <h3 class="title">Leave a reply</h3>
-                <form class='formCom' id="form" method="POST" data-id="{{ $post->id }}" data-info="/post/">
+                <form  id="form" method="POST" data-id="{{ $post->id }}" data-info="/post/">
                     {{ csrf_field()}}
                     <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
                     <input class="input" type="hidden" name="user_id" value="{{$postOwner->id}}">
@@ -75,6 +82,14 @@
                 var post_id = $('#form').attr("data-id");
                 var action = $('#form').attr("data-info");
                 $('#form').attr('action',action+post_id);
+              });
+              $('.delete').on('click',function(e){
+                e.preventDefault();
+                var comment_id = $(this).attr("data-id");
+                var action = $(this).attr("data-info");
+                $('.delete').closest(".formCom").attr('method',"DELETE");
+                $('.delete').closest(".formCom").attr('action',action+comment_id);
+                $('.delete').closest(".formCom").submit();
               })
       })
       </script>

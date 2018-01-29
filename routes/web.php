@@ -5,6 +5,7 @@
 
 use TCG\Voyager\Models\Post;
 use  \Illuminate\Support\Facades\Redis;
+use App\Comment;
 
 
 Route::get('/', function () {
@@ -18,7 +19,10 @@ Route::get('category/{id}', 'HomeController@category')->name('category');
 Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
 Route::post('post/{id}', 'HomeController@comment');
-
+Route::get('post/{post}/{id}', function($post,$id){
+  Comment::destroy($id);
+  return Redirect::to("/post/".$post);
+});
 
 
 Route::get('login/facebook','Auth\LoginController@redirectToProvider');
