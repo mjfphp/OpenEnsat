@@ -57,19 +57,14 @@
 					<!-- Posts sidebar -->
 					<div class="widget">
 						<h3 class="title">Cours Populaires</h3>
-            @yield('populare-cours')
-
+            <div class="widget-category">
+              @foreach($coursp as $cour)
+              <a href="/course/{{($cour->id)}}">{{$cour->title}}</a>
+              @endforeach
+						</div>
 					</div>
 					<!-- /Posts sidebar -->
 
-					<!-- Tags -->
-					<div class="widget">
-						<h3 class="title">Tags</h3>
-						<div class="widget-tags">
-							@yield('tags')
-						</div>
-					</div>
-					<!-- /Tags -->
 
 				</aside>
 				<!-- /Aside -->

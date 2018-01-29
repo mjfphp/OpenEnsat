@@ -32,8 +32,7 @@ class HomeController extends Controller
 
         return view('home')
 
-            ->with('cours',Course::all())
-            ->with('categories',Category::all());
+            ->with('cours',Course::all());
     }
 
     public function category($id){
@@ -41,7 +40,8 @@ class HomeController extends Controller
         $categories=Category::all();
         return view('home')
             ->with('categories',$categories)
-            ->with('cours',Course::Where('category_id','=',$id));
+            ->with('cours',Course::Where('category_id','=',$id))
+            ->with('coursp',Course::inRandomOrder()->take(5)->get());
     }
 
     public function course($id){
@@ -56,12 +56,12 @@ class HomeController extends Controller
         $comments = $post->comments();
         return view('post')
             ->with([
-              'categories' => $categories,
               'post' => $post,
               'postOwner' => $postOwner,
               'commentsNumber' => $commentsNumber,
-              'comments' => $comments,
-            ]);
+              'comments' => $comments
+            ])
+            ->with('coursp',Course::inRandomOrder()->take(5)->get());
 
     }
 

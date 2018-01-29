@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Models\Category;
+use App\Course;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
       view()->composer('layouts.app4', function($view){
-        $view->with('categories', Category::all());
+        $view->with('categories', Category::all())
+        ->with('coursp',Course::inRandomOrder()->take(5)->get());
       });
     }
 
