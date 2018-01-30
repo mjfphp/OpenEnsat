@@ -43,12 +43,14 @@
                       <div class="media-body">
                           <h4 class="media-heading">{{$comment->user()->name}}
                             <span class="time">{{\Carbon\Carbon::createFromTimeStamp(strtotime($comment->created_at))->diffForHumans()}}</span>
-                          <form class='formCom'>
-                            {{ csrf_field()}}
-                            <input type="hidden" name="_method" value="delete" class="method">
-                            <a href="#" class="reply edit" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="#" class="reply delete" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-trash fa-lg"></i></a>
-                          </form>
+                          @if(Auth::user()->id == $comment->user()->id)
+                                  <form class='formCom'>
+                                      {{ csrf_field()}}
+                                      <input type="hidden" name="_method" value="delete" class="method">
+                                      <a href="#" class="reply edit" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-pencil fa-lg"></i></a>
+                                      <a href="#" class="reply delete" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-trash fa-lg"></i></a>
+                                  </form>
+                              @endif
                           </h4>
                           <p>{{$comment->comment}}</p>
                       </div>
@@ -86,11 +88,26 @@
               });
               $('.delete').on('click',function(e){
                 e.preventDefault();
-                var comment_id = $(this).attr("data-id");
-                var action = $(this).attr("data-info");
-                $('.delete').closest(".formCom").attr('method',"DELETE");
-                $('.delete').closest(".formCom").attr('action',action+comment_id);
-                $('.delete').closest(".formCom").submit();
+                var r = confirm("Vous voulez supprimer se commentaire ?");
+                if(r){
+                    var comment_id = $(this).attr("data-id");
+                    var action = $(this).attr("data-info");
+                    $(this).closest(".formCom").attr('method',"DELETE");
+                    $(this).closest(".formCom").attr('action',action+comment_id);
+                    $(this).closest(".formCom").submit();
+                }
+              });
+              $('.edit').on('click',function (e) {
+                  e.preventDefault();
+                  var p = $(this).parent().parent().parent();
+                  console.log(p.siblings()[0]);
+                  var txt = p.siblings().text();
+                  p.siblings().append('<textarea class="commentText"></textarea><button type="button" class="main-btn submitEdit">Submit</button><button type="button" class="main-btn submitBtn grey annuler">Annuler</button>');
+                  var txtA = p.siblings().children('textarea').html(txt);
+
+
+
+
               })
       })
       </script>
