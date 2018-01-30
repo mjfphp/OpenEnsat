@@ -71,9 +71,4 @@ class HomeController extends Controller
 
         return $this->post($id);
     }
-
-    public function deleteComment($post,$id){
-      Comment::destroy($id);
-      return $this->post($post);
-    }
 }

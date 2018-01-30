@@ -40,7 +40,13 @@ Table OF Contents
 /*------------------------------------*\
 	General
 \*------------------------------------*/
-
+.editComment{
+  display: none;
+}
+.mycnt{
+  display: flex;
+  flex-direction: column;
+}
 .grey{
     background: #b9c0ce !important;
 }

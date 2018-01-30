@@ -44,15 +44,21 @@
                           <h4 class="media-heading">{{$comment->user()->name}}
                             <span class="time">{{\Carbon\Carbon::createFromTimeStamp(strtotime($comment->created_at))->diffForHumans()}}</span>
                           @if(Auth::user()->id == $comment->user()->id)
-                                  <form class='formCom'>
+                                  <form class='formCom' method="POST">
                                       {{ csrf_field()}}
-                                      <input type="hidden" name="_method" value="delete" class="method">
+                                      <input type="hidden" name="_method" value="DELETE" class="method">
+                                      <input type='hidden' name="text" id='text'>
                                       <a href="#" class="reply edit" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-pencil fa-lg"></i></a>
                                       <a href="#" class="reply delete" data-id="{{ $comment->id }}" data-info="/post/{{$post->id}}/"><i class="fa fa-trash fa-lg"></i></a>
                                   </form>
                               @endif
                           </h4>
                           <p>{{$comment->comment}}</p>
+                          <div class="editComment">
+                            <textarea class="commentText"></textarea>
+                            <button type="button" id="submitEdit" class="main-btn">Submit</button>
+                            <button type="button" id="annulerEdit" class="main-btn grey">Annuler</button>
+                          </div>
                       </div>
                   </div>
                 @endforeach
@@ -92,7 +98,6 @@
                 if(r){
                     var comment_id = $(this).attr("data-id");
                     var action = $(this).attr("data-info");
-                    $(this).closest(".formCom").attr('method',"DELETE");
                     $(this).closest(".formCom").attr('action',action+comment_id);
                     $(this).closest(".formCom").submit();
                 }
@@ -100,15 +105,31 @@
               $('.edit').on('click',function (e) {
                   e.preventDefault();
                   var p = $(this).parent().parent().parent();
-                  console.log(p.siblings()[0]);
-                  var txt = p.siblings().text();
-                  p.siblings().append('<textarea class="commentText"></textarea><button type="button" class="main-btn submitEdit">Submit</button><button type="button" class="main-btn submitBtn grey annuler">Annuler</button>');
-                  var txtA = p.siblings().children('textarea').html(txt);
+                  var txt = p.children("p").text();
+                  p.children('.editComment').children('.commentText').val(txt);
+                  p.children('.editComment').show();
+                  p.children("p").hide();
 
+                  $('#annulerEdit').on('click',function(e){
+                    e.preventDefault();
+                    $(this).parent().siblings("p").show();
+                    $(this).parent().hide();
+                  })
 
-
-
-              })
+                  $('#submitEdit').on('click',function(e){
+                    e.preventDefault();
+                    var r = confirm("Vous voulez modifier se commentaire ?");
+                    if(r){
+                        var comment_id = $(this).parent().siblings("h4").children('.formCom').children('.edit').attr("data-id");
+                        var action = $(this).parent().siblings("h4").children('.formCom').children('.edit').attr("data-info");
+                        var txt = $(this).siblings('.commentText').val();
+                        $(this).parent().siblings("h4").children('.formCom').children('#text').attr('value',txt);
+                        $(this).parent().siblings("h4").children('.formCom').children('.method').attr('value','PUT');
+                        $(this).parent().siblings("h4").children('.formCom').attr('action',action+comment_id);
+                        $(this).parent().siblings("h4").children('.formCom').submit();
+                    }
+                  })
+              });
       })
       </script>
     @endsection

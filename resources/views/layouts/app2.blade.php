@@ -43,54 +43,56 @@
 
 @yield('header')
 
-@yield('content')
+<div class="mycnt">
+  @yield('content')
 
 
-<!-- Footer -->
-<footer id="footer" class="sm-padding bg-dark">
+  <!-- Footer -->
+  <footer id="footer" class="sm-padding bg-dark">
 
-    <!-- Container -->
-    <div class="container footer-cnt">
+      <!-- Container -->
+      <div class="container footer-cnt">
 
-        <!-- Row -->
-        <div class="footer col-md-offset-2">
-
-
-                <!-- footer logo -->
-                <div class="logo-cnt col-md-3 col-xs-4 col-sm-4">
-                    <a href="index.html">
-                      <span class="col-md-3 col-xs-3 col-sm-3">
-                        <img class="logo" src="{{ asset('img/logo-alt.png') }}" alt="logo">
-                      </span>
-                      <span class="nom-bar-haut col-md-2 col-sm-2 white-text">OpenEnsat</span>
-                    </a>
+          <!-- Row -->
+          <div class="footer col-md-offset-2">
 
 
+                  <!-- footer logo -->
+                  <div class="logo-cnt col-md-3 col-xs-4 col-sm-4">
+                      <a href="index.html">
+                        <span class="col-md-3 col-xs-3 col-sm-3">
+                          <img class="logo" src="{{ asset('img/logo-alt.png') }}" alt="logo">
+                        </span>
+                        <span class="nom-bar-haut col-md-2 col-sm-2 white-text">OpenEnsat</span>
+                      </a>
 
-                </div>
-                <!-- /footer logo -->
 
-                <!-- footer follow -->
-                <ul class="footer-follow col-md-4 col-xs-4">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-                <!-- /footer follow -->
 
-                <!-- footer copyright -->
-                <div class="footer-copyright col-md-4 col-sm-4">
-                    <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">NAJIH DRISS <3</a></p>
-                </div>
-                <!-- /footer copyright -->
+                  </div>
+                  <!-- /footer logo -->
 
-        </div>
-        <!-- /Row -->
+                  <!-- footer follow -->
+                  <ul class="footer-follow col-md-4 col-xs-4">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  </ul>
+                  <!-- /footer follow -->
 
-    </div>
-    <!-- /Container -->
+                  <!-- footer copyright -->
+                  <div class="footer-copyright col-md-4 col-sm-4">
+                      <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">NAJIH DRISS <3</a></p>
+                  </div>
+                  <!-- /footer copyright -->
 
-</footer>
+          </div>
+          <!-- /Row -->
+
+      </div>
+      <!-- /Container -->
+
+  </footer>
+</div>
 <!-- /Footer -->
 <!-- jQuery Plugins -->
 

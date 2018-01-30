@@ -6,6 +6,7 @@
 use TCG\Voyager\Models\Post;
 use  \Illuminate\Support\Facades\Redis;
 use App\Comment;
+use Illuminate\Support\Facades\Input;
 
 
 Route::get('/','HomeController@index');
@@ -17,11 +18,17 @@ Route::get('category/{id}', 'HomeController@category');
 Route::get('course/{id}', 'HomeController@course');
 Route::get('post/{id}', 'HomeController@post');
 Route::post('post/{id}', 'HomeController@comment');
-Route::get('post/{post}/{id}', function($post,$id){
+Route::delete('post/{post}/{id}', function($post,$id){
   Comment::destroy($id);
   return Redirect::to("/post/".$post);
 });
 
+Route::put('post/{post}/{id}', function($post,$id){
+  $comment = Comment::find($id);
+  $comment->comment = Input::get('text');
+  $comment->save();
+  return Redirect::to("/post/".$post);
+});
 
 Route::get('login/facebook','Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback' );
